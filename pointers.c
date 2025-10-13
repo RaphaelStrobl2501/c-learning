@@ -100,7 +100,6 @@ int sum(int größeArray, int *arr) {
         total += *ptr;
         ptr++;
     }
-    
 
     return total;
     
@@ -112,10 +111,16 @@ double durchschnitt(int größeArray, int total) {
     return schnitt;
 }
 
-int max(int *arr) {
-    int maximum;
+int max(int *arr, int größeArray) {
+    int maximum = arr[0];
 
-    
+    for (int i = 0; i < größeArray; i++)
+    {
+        if (arr[i] > maximum)
+        {
+            maximum = arr[i];
+        }
+    }
 
     return maximum;
 }
@@ -136,10 +141,13 @@ int main() {
 
     int total = sum(größeArray, arr);
     double schnitt = durchschnitt(größeArray, total);
+    int maximum = max(arr, größeArray);
 
     printf("%d\n", total);
 
     printf("%.2lf\n", schnitt);
+
+    printf("%d\n", maximum);
 
     /* for (int i = 0; i < größeArray; i++) // print array
     {
