@@ -45,7 +45,7 @@ int main() {
 
 } */
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <stdlib.h>
 
 int sum(int *arr, int size) {
@@ -86,4 +86,30 @@ int main() {
 
     free(arr);
 
+} */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int größeArray;
+    printf("Größe Array: ");
+    scanf("%d", &größeArray);
+
+    int *arr = (int*) malloc (sizeof(int) * größeArray);
+
+    for (int i = 0; i < größeArray; i++)
+    {
+        printf("Welche Zahlen soll der Array enthalten: ");
+        scanf("%d", &arr[i]);
+    }
+
+
+    for (int i = 0; i < größeArray; i++) // print array
+    {
+        printf("%d\n", arr[i]);
+    }
+
+
+    free(arr);
 }
