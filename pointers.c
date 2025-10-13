@@ -91,7 +91,37 @@ int main() {
 #include <stdio.h>
 #include <stdlib.h>
 
+int sum(int größeArray, int *arr) {
+    int total = 0;
+    int *ptr = arr;
+
+    for (int i = 0; i < größeArray; i++)
+    {
+        total += *ptr;
+        ptr++;
+    }
+    
+
+    return total;
+    
+}
+
+double durchschnitt(int größeArray, int total) {
+    double schnitt = (double) total / größeArray;
+
+    return schnitt;
+}
+
+int max(int *arr) {
+    int maximum;
+
+    
+
+    return maximum;
+}
+
 int main() {
+
     int größeArray;
     printf("Größe Array: ");
     scanf("%d", &größeArray);
@@ -104,11 +134,18 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
+    int total = sum(größeArray, arr);
+    double schnitt = durchschnitt(größeArray, total);
 
-    for (int i = 0; i < größeArray; i++) // print array
+    printf("%d\n", total);
+
+    printf("%.2lf\n", schnitt);
+
+    /* for (int i = 0; i < größeArray; i++) // print array
     {
         printf("%d\n", arr[i]);
-    }
+    } */
+
 
 
     free(arr);
